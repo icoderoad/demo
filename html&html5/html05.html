@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <!--注释   页头   -->
+  <head>
+  <meta charset="utf-8"> 
+    <!--注释   页头标题   -->
+    <title>HTML&HTML5基础知识：「05」HTML5元素简介</title> 
+
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        list-style:none;
+        display: inline-block;
+    }
+    a{
+        text-decoration: none;
+    }
+    .clears {
+        clear: both;
+        height: 0;
+        line-height: 0;
+        font-size: 0;
+        overflow: hidden;
+    }
+    body {
+        margin: 0 auto;
+    }
+   
+    .layout{
+        widht: 1920px;
+        height: 740px;
+        background-color:white;
+        padding-top: 20px;
+    }
+    .header {
+        height: 50px;
+        width: 1300px;
+        background-color: #90c840;
+        color: white;
+        margin: 20px auto 30px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .nav {
+        background-color:#edad21;
+        height: 60px;
+        width: 1300px;
+        margin-bottom: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 30px;
+    }
+    .menu{
+        width: 1300px;
+        height: 60px;
+        display: inline-block;
+    }
+    .menu,ul>li{
+        vertical-align: middle;
+    }
+
+    li{
+        display: inline-block;
+        width: 250px;
+        height: 50px;
+        margin-top: 5px;
+        text-align: center;
+        margin-left: 5px;
+        line-height: 50px;
+        font-size: 25px;
+        background-color:dimgrey;
+    }
+    a:link{
+        color:greenyellow;
+    }
+    a:hover{
+        color: darkorange;
+    }
+    .aside {
+        height: 370px;
+        background-color: #ec1f85;
+        text-align: center;
+        line-height: 50px;
+        font-size: 25px;
+        width: 350px;
+        float: left;
+        margin-left: 30px;
+    }
+    .main {
+        height: 360px;
+        background-color:#009dda;
+        width: 935px;
+        float: left;
+        text-align: center;
+        line-height: 35px;
+        position: relative;
+        left: 15px;
+        margin-bottom: 20px;
+        font-size: 25px;
+        padding-top: 10px;
+    }
+    .main p a:link{
+        color: blue;
+        size: 15px;
+    }
+    .main p a:hover{
+        color: red;
+        size: 15px;
+    }
+    .footer {
+        height: 80px;
+        background-color:#dbdb00;
+        width: 1300px;
+        margin-top: 15px;
+        float: left;
+        text-align: center;
+        margin-left: 30px;
+        line-height: 80px;
+        font-size: 25px;
+    }
+
+    .life{
+        color: white;
+        line-height: 50px;
+        font-size: 30px;
+    }
+
+</style>
+
+  </head>
+<body>
+​	<div class="layout">
+		 <!--页面标题-->
+	    <header class="header">页面标题-HTML5新标签简介</header>
+	     <!--页面导航-->
+	    <nav class="nav">
+	    	<ul class="menu">
+	            <li><a href="#">页面导航-header标签</a></li>
+	            <li><a href="#">nav标签</a></li>
+	            <li><a href="#">aside标签</a></li>
+	            <li><a href="#">main标签</a></li>
+	            <li><a href="#">footer标签</a></li>
+	        </ul>
+	    </nav>
+	    <!--侧栏区-->
+	    <aside class="aside">侧栏区</aside>
+	    <!--主内容区-->
+	    <main class="main">
+	    	<p> 主内容区 </p>
+            <p> &nbsp; </p>
+	    	<!-- <h1>嘿，你好，欢迎来到路条编程公众号！</h1> -->
+			<h2>嘿，你好，欢迎来到路条编程公众号！</h2>
+			<h3>嘿，你好，欢迎来到路条编程公众号！</h3>
+			<h4>嘿，你好，欢迎来到路条编程公众号！</h4>
+            <br>
+			<!-- 
+			<h5>嘿，你好，欢迎来到路条编程公众号！</h5>
+			<h6>嘿，你好，欢迎来到路条编程公众号！</h6>
+			-->
+			<p class="life">生活不仅是眼前的苟且，还有诗和远方。</p> 
+	    </main>
+	     <!--页脚-->
+	    <footer class="footer">页脚-&copy;路条编程版权所有</footer>
+    	<div class="clears"></div>
+   
+​	</div>
+</body>
+</html>
