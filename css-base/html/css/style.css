@@ -78,7 +78,7 @@ a:hover{
     color: darkorange;
 }
 .content {
-    height: 480px;
+    height: 510px;
     width: 1300px;
     margin-bottom: 20px;
     margin-left: auto;
@@ -86,7 +86,7 @@ a:hover{
 }
 
 .aside {
-    height: 480px;
+    height: 510px;
     background-color: #ec1f85;
     text-align: center;
     line-height: 50px;
@@ -110,9 +110,9 @@ a:hover{
 }
 
 .main {
-    height: 470px;
+    height: 480px;
     background-color:#009dda;
-    width: 935px;
+    width: 915px;
     float: left;
     text-align: center;
     line-height: 35px;
