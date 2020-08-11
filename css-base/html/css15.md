@@ -46,7 +46,7 @@ rem 即 root em，其参考元素为文档的根元素 <html> 中 font-size 属�
         width: 80px;
     }
 
-    .aside .row span {
+    .aside span {
         font-size: 1rem;
         line-height: 1.1rem;
     }
@@ -58,12 +58,11 @@ rem 即 root em，其参考元素为文档的根元素 <html> 中 font-size 属�
 在定义 CSS 样式的时候经常会用的 “%” 这个长度单位，但是这个百分比到底是相对于谁的百分比呢？
 块级元素的默认宽度 100% 是相对其父元素的宽度，父元素的宽度相对更上一级元素的宽度. 更准确的说是相对于父元素内容的宽度(不包括内边距)
 
-以侧栏区用户注册表单为例，由于表单中每一行都是通过 grid 方式排版的，控件描述及输入控件各占每行的50%。具体 .row 类的定义，请自行查看 style.css文件。 为了方便查看，将每列添加相应的边框，各占每列的100%。
+以侧栏区用户注册表单为例，由于注册表单是通过 grid 方式排版，控件描述及输入控件各占每行的50%。具体 regForm 类的定义，请自行查看 style.css文件。 为了方便查看设置百分比效果，将每列添加相应的边框。
 
 <style type="text/css">
 
-    .row .item {
-         width:100%;
+    .regForm .item {
          border: 1px dashed #ccc;
     }
 
@@ -74,9 +73,10 @@ rem 即 root em，其参考元素为文档的根元素 <html> 中 font-size 属�
     .aside label {
         display:inline-block;
         width: 80px;
+        line-height: 1.2em;
     }
 
-    .aside .row span {
+    .aside span {
         font-size: 1rem;
         line-height: 1.1rem;
     }

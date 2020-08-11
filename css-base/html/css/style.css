@@ -46,6 +46,7 @@ body {
     margin-right: auto;
     line-height: 30px;
 }
+
 .menu{
     width: 1300px;
     height: 60px;
@@ -150,17 +151,22 @@ a:hover{
 }
 .mt-10{margin-top: 10px;}
 
+.regForm {
+    display: grid;
+    grid-template-rows: 1.5em 1.5em 3.5em;
+    grid-template-columns: 50% 50%;
+}
+
 .row {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
 }
 
-.row  .item {
+.item {
   line-height: 15px;
   justify-items: start;
   justify-content: start;
-  height:1.5em;
 }
 
 @font-face {

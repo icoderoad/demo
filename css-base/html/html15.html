@@ -7,21 +7,18 @@
     <title> CSS 层叠样式表基础知识：「15」使用 CSS 的绝对单位与相对单位设置元素长度和尺寸 </title> 
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <style type="text/css">
-            .row .item {
+            .regForm .item {
                  width:100%;
                  border: 1px dashed #ccc;
-            }
-
-             [title="hobby"]{
-                height:3.5em !important;
             }
 
             .aside label {
                 display:inline-block;
                 width: 80px;
+                line-height: 1.2em;
             }
 
-            .aside .row span {
+            .aside span {
                 font-size: 1rem;
                 line-height: 1.1rem;
             }
@@ -62,7 +59,7 @@
               margin: 3px -20px;
             }
 
-           .main h2 {
+            .main h2 {
               padding: 6px 8px;
             }
 
@@ -224,23 +221,21 @@
              <p>用户注册</p>
 
             <form action="#" method="post">
-                <div class="row mt-10">
+                <div class="regForm mt-10">
+
                     <span class="item">用户名：</span>
                     <span class="item">
                       <input type="text" value="" placeholder="请输入用户名" required="required" >                 
                     </span>
-                </div>
-
-                <div class="row mt-10 ">
+            
                     <span class="item">性别：</span>
                     <span class="item">
                       <label for="male"><input type="radio" value="male" id="male" placeholder="男" name="sex" required="required" checked="checked"> 男 </label>
                        <label for="female"><input type="radio" name="sex"  value="female" id="female" placeholder="女" required="required" > 女 </label>          
                     </span>
-                </div>
-                <div class="row mt-10" >
-                    <span class="item" title="hobby">爱好：</span>
-                    <span class="item" title="hobby">
+                
+                    <span class="item" >爱好：</span>
+                    <span class="item" >
                        <label for="dushu"><input type="checkbox" name="hobby" value="dushu"   id="dushu" checked="checked">读书</label>
                        <label for="tiyu"><input type="checkbox"  name="hobby" value="tiyu"    id="tiyu"  >体育</label>
                        <label for="yinyue"><input type="checkbox" name="hobby" value="yinyue" id="yinyue">音乐</label>
@@ -248,6 +243,7 @@
                        <label for="bagua"><input type="checkbox" name="hobby" value="bagua"   id="bagua">八卦</label>
                        <label for="tucao"><input type="checkbox" name="hobby" value="tucao"   id="tucao">吐槽</label>        
                     </span>
+
                 </div>
 
                 <div class="mt-10"><input type="submit" value="注    册" ></div>
