@@ -4,7 +4,7 @@
   <head> 
     <meta charset="utf-8">
     <!--注释   页头标题   -->
-    <title> CSS 层叠样式表基础知识：「18」通过 RGB 值设置元素颜色样式 </title> 
+    <title> CSS 层叠样式表基础知识：「19」使用 CSS 变量一次修改多个元素 </title> 
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <style type="text/css">
             #text-orange {
@@ -20,8 +20,11 @@
             }
 
             body {
-              background-color: rgb(255,248,220);
-              color: rgb(255,255,255);
+              --primary-bg-color: #FFF8DC;
+              --primary-text-color: #FFF;
+
+              background-color: var(--primary-bg-color);
+              color: var(--primary-text-color);
             }
 
             [href~="#pageTop"] {
