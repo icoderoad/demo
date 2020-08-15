@@ -40,7 +40,7 @@ var(--my-padding, 8px 12px 14px 7px);
 以上代码中，变量 --text-margin 用作属性名是无效的。
 
 
-在之前文章代码的基础，在页面 style 创建两个 CSS 变量，一个变量为主色调背景色，另一个为主色调字体颜色。并将 body 元素的背景色和字体颜色通过变量方式设置。代码定义如下：
+在之前文章代码的基础，在页面 style 创建两个 CSS 变量，一个变量为主色调背景色，另一个为主色调字体颜色。并将 body 元素的背景色和字体颜色通过变量方式设置。同时将返回顶部文本颜色设置为变量 --primary-text-color。如果要改变这两处理的文本颜色， 直接修改变量 --primary-text-color 值即可。达到一次修改多个元素值的目的。调整代码如下：
 
 <style type="text/css">
 
@@ -53,6 +53,11 @@ var(--my-padding, 8px 12px 14px 7px);
       color: var(--primary-text-color);
     }
     
+    [href~="#pageTop"] {
+        color: var(--primary-text-color) !important;
+        background: #F00;
+    }
+
 </style>
 
 

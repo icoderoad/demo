@@ -4,20 +4,29 @@
   <head> 
     <meta charset="utf-8">
     <!--注释   页头标题   -->
-    <title> CSS 层叠样式表基础知识：「20」CSS 变量作用域及兼容性问题 </title> 
+    <title> CSS 层叠样式表基础知识：「20」CSS 变量作用域、浏览器兼容性及变量重载问题 </title> 
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <style type="text/css">
 
             :root {
-              --bg-color-SlateGray: SlateGray;
+              --bg-color: SlateGray;
             }
 
-            .menu li:nth-child(2) {  
-              background-color: var(--bg-color-SlateGray);
+            @media (max-width: 1400px) {
+              :root {
+                --bg-color: Purple;
+              }
+            }
+
+            .menu li:nth-child(2) { 
+              --bg-color: DarkViolet;
+              background-color: SlateGray; 
+              background-color: var(--bg-color);
             }
 
             .menu li:nth-child(4) {  
-              background-color: var(--bg-color-SlateGray);
+              background-color: SlateGray;
+              background-color: var(--bg-color);
             }
 
             #text-orange {
