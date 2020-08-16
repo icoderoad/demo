@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+.clears {
+    clear: both;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+}
+body {
+    margin: 0 auto;
+}
+
+.layout{
+    widht: 1920px;
+    height: 740px;
+    padding-top: 20px;
+}
+
+.header {
+    height: 50px;
+    width: 1280px;
+    background-color: #90c840;
+    color: white;
+    margin: 20px auto 30px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.nav {
+    background-color:#edad21;
+    height: 60px;
+    width: 1280px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 30px;
+}
+
+.menu{
+    width: 1280px;
+    height: 60px;
+    display: inline-block;
+}
+.menu ul{
+    list-style:none;
+    display: inline-block;
+}
+.menu{
+    vertical-align: middle;
+}
+
+.menu li{
+    vertical-align: middle;
+    display: inline-block;
+    width: 244px;
+    height: 50px;
+    margin-top: 5px;
+    text-align: center;
+    margin-left: 5px;
+    line-height: 50px;
+    font-size: 25px;
+    background-color:dimgrey;
+}
+a:link{
+    color:greenyellow;
+}
+a:hover{
+    color: darkorange;
+}
+.content {
+    height: 510px;
+    width: 1300px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.aside {
+    height: 510px;
+    background-color: #ec1f85;
+    text-align: center;
+    line-height: 50px;
+    font-size: 25px;
+    width: 350px;
+    float: left;
+}
+.aside ul, .aside ol{
+    text-align: left;
+    line-height: 30px;
+    font-size: 15px;
+    width: 270px;
+    margin-left: 50px
+}
+.aside p{
+  margin-left: 10px
+  text-align: left;
+}
+.aside .row span{
+  font-size: 15px;
+}
+
+.main {
+    height: 480px;
+    background-color:#009dda;
+    width: 915px;
+    float: left;
+    text-align: center;
+    line-height: 35px;
+    position: relative;
+    left: 15px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    padding-top: 10px;
+}
+.main p a:link{
+    color: blue;
+    size: 15px;
+}
+.main p a:hover{
+    color: red;
+    size: 15px;
+}
+.footer {
+    height: 60px;
+    background-color:#dbdb00;
+    color: white;
+    width: 1280px;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 60px;
+    font-size: 25px;
+}
+
+.life{
+    color: white;
+    line-height: 50px;
+    font-size: 30px;
+}
+.mt-10{margin-top: 10px;}
+
+
+
+@font-face {
+    font-family: 'AlibabaPuHuiTi-Heavy';
+    src: url('../fonts/Alibaba-PuHuiTi-Heavy.otf');
+    font-weight: 900;
+    font-style: normal;
+}
