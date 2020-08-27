@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html style="font-size: 22px">
   <!--注释   页头   -->
-  <head> 
+  <head>
     <meta charset="utf-8">
     <!--注释   页头标题   -->
-    <title> CSS 层叠样式表基础知识：「20」CSS 变量作用域、浏览器兼容性及变量重载问题 </title> 
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title> CSS 层叠样式表基础知识：「20」CSS 变量作用域、浏览器兼容性及变量重载问题 </title>
+    <link rel="stylesheet" type="text/css" href="../../css-base/html/css/style.css">
     <style type="text/css">
 
             :root {
@@ -18,13 +18,13 @@
               }
             }
 
-            .menu li:nth-child(2) { 
+            .menu li:nth-child(2) {
               --bg-color: DarkViolet;
-              background-color: SlateGray; 
+              background-color: SlateGray;
               background-color: var(--bg-color);
             }
 
-            .menu li:nth-child(4) {  
+            .menu li:nth-child(4) {
               background-color: SlateGray;
               background-color: var(--bg-color);
             }
@@ -32,7 +32,7 @@
             #text-orange {
               color: rgb(255,165,0);
             }
-    
+
             .text-gold {
                 color: rgb(255,215,0);
             }
@@ -90,12 +90,12 @@
               border: 1px dashed #ccc;
             }
 
-            .aside ul>li:nth-child(1) {  
+            .aside ul>li:nth-child(1) {
               border: 1px dashed #ccc;
               margin: 3px;
             }
 
-           .aside ul>li:nth-child(2) {    
+           .aside ul>li:nth-child(2) {
               border: 1px dashed #ccc;
               margin: 3px -20px;
             }
@@ -160,7 +160,7 @@
           .img-solid-red-radius{
               width: 100px;
               /*border-radius: 50px; */
-              border-radius: 50%; 
+              border-radius: 50%;
           }
 
           .img-solid-red {
@@ -196,7 +196,7 @@
         .life {
           line-height: 30px;
           font-size:18px;
-         
+
         }
 
         .text-puhuiti-heavy {
@@ -212,7 +212,52 @@
         h2 {
           color: red;
         }
-        
+
+        /* flex */
+        .wrapper {
+            display: flex;
+            flex-flow: row wrap;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .wrapper > * {
+            padding: 10px;
+            flex: 1 100%;
+        }
+
+        .headerflex {
+            background: tomato;
+        }
+
+        .footerflex {
+            background: lightgreen;
+        }
+
+        .main {
+            text-align: left;
+            background: deepskyblue;
+        }
+
+        .aside-1 {
+            background: gold;
+        }
+
+        .aside-2 {
+            background: hotpink;
+        }
+
+        @media all and (min-width: 600px) {
+            .aside { flex: 1 0 0; }
+        }
+
+        @media all and (min-width: 800px) {
+            .main    { flex: 3 0px; }
+            .aside-1 { order: 1; }
+            .main    { order: 2; }
+            .aside-2 { order: 3; }
+            .footerflex  { order: 4; }
+        }
     </style>
   </head>
 <body id="pageBody">
@@ -262,15 +307,15 @@
 
                     <span class="item">用户名：</span>
                     <span class="item">
-                      <input type="text" value="" placeholder="请输入用户名" required="required" >                 
+                      <input type="text" value="" placeholder="请输入用户名" required="required" >
                     </span>
-            
+
                     <span class="item">性别：</span>
                     <span class="item">
                       <label for="male"><input type="radio" value="male" id="male" placeholder="男" name="sex" required="required" checked="checked"> 男 </label>
-                       <label for="female"><input type="radio" name="sex"  value="female" id="female" placeholder="女" required="required" > 女 </label>          
+                       <label for="female"><input type="radio" name="sex"  value="female" id="female" placeholder="女" required="required" > 女 </label>
                     </span>
-                
+
                     <span class="item" >爱好：</span>
                     <span class="item" >
                        <label for="dushu"><input type="checkbox" name="hobby" value="dushu"   id="dushu" checked="checked">读书</label>
@@ -278,7 +323,7 @@
                        <label for="yinyue"><input type="checkbox" name="hobby" value="yinyue" id="yinyue">音乐</label>
                        <label for="youxi"><input type="checkbox" name="hobby" value="youxi"   id="youxi">游戏</label>
                        <label for="bagua"><input type="checkbox" name="hobby" value="bagua"   id="bagua">八卦</label>
-                       <label for="tucao"><input type="checkbox" name="hobby" value="tucao"   id="tucao">吐槽</label>        
+                       <label for="tucao"><input type="checkbox" name="hobby" value="tucao"   id="tucao">吐槽</label>
                     </span>
 
                 </div>
@@ -295,32 +340,39 @@
           <h3 id="text-orange" class="text-lime text-gold" style="color:DeepPink">嘿，你好，欢迎来到路条编程公众号！</h3>
           <h4>嘿，你好，欢迎来到路条编程公众号！</h4>
           <br>
-          <!-- 
+          <!--
           <h5>嘿，你好，欢迎来到路条编程公众号！</h5>
           <h6>嘿，你好，欢迎来到路条编程公众号！</h6>
           -->
-          <p class="life">生活不仅是眼前的苟且，还有<a href="https://baike.baidu.com/item/%E8%AF%97%E5%92%8C%E8%BF%9C%E6%96%B9/19483889" target="_blank" class="font-px-30">诗和远方</a>。</p> 
+          <p class="life">生活不仅是眼前的苟且，还有<a href="https://baike.baidu.com/item/%E8%AF%97%E5%92%8C%E8%BF%9C%E6%96%B9/19483889" target="_blank" class="font-px-30">诗和远方</a>。</p>
           <p>
-            <img src="./images/html07-show01.jpg" alt="八月你好" class="img-solid-red-radius" >
+            <img src="../../css-base/html/images/html07-show01.jpg" alt="八月你好" class="img-solid-red-radius" >
             <a href="#">
-            <img src="./images/sun.jpg" alt="迄今为止拍摄到的最接近太阳的照片"  title="迄今为止拍摄到的最接近太阳的照片" class="img-dotted-red  semicircle-up">
+            <img src="../../css-base/html/images/sun.jpg" alt="迄今为止拍摄到的最接近太阳的照片" title="迄今为止拍摄到的最接近太阳的照片" class="img-dotted-red  semicircle-up">
             </a>
 
-            <img src="./images/sun.jpg" alt="迄今为止拍摄到的最接近太阳的照片"  title="迄今为止拍摄到的最接近太阳的照片" class="img-solid-red semicircle-down">
+            <img src="../../css-base/html/images/sun.jpg" alt="迄今为止拍摄到的最接近太阳的照片" title="迄今为止拍摄到的最接近太阳的照片" class="img-solid-red semicircle-down">
 
-            <img src="./images/sun.jpg" alt="迄今为止拍摄到的最接近太阳的照片"  title="迄今为止拍摄到的最接近太阳的照片" class="img-dotted-red semicircle-left">
+            <img src="../../css-base/html/images/sun.jpg" alt="迄今为止拍摄到的最接近太阳的照片" title="迄今为止拍摄到的最接近太阳的照片" class="img-dotted-red semicircle-left">
 
-            <img src="./images/sun.jpg" alt="迄今为止拍摄到的最接近太阳的照片"  title="迄今为止拍摄到的最接近太阳的照片" class="img-solid-red semicircle-right">
+            <img src="../../css-base/html/images/sun.jpg" alt="迄今为止拍摄到的最接近太阳的照片" title="迄今为止拍摄到的最接近太阳的照片" class="img-solid-red semicircle-right">
           </p>
           <br/>
           <a href="https://www.taobao.com" >淘宝网(当前页打开)</a> <a href="https://www.taobao.com" target="_blank">淘宝网(新页面打开)</a> &nbsp; &nbsp; <a href="#pageTop">返回顶部</a>
 
           </main>
           <div class="clears"></div>
+          <div class="wrapper">
+              <header class="headerflex">Header</header>
+              <article class="main">
+                  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+              </article>
+              <aside class="aside aside-1">Aside 1</aside>
+              <aside class="aside aside-2">Aside 2</aside>
+              <footer class="footerflex">页脚-&copy;路条编程版权所有</footer>
+          </div>
       </article>
 
-       <!--页脚-->
-      <footer class="footer">页脚-&copy;路条编程版权所有</footer>
       <div class="clears"></div>
   </div>
 </body>
