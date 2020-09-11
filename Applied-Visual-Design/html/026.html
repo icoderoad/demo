@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html style="font-size: 22px">
+  <!--注释   页头   -->
+  <head> 
+    <meta charset="utf-8">
+    <!--注释   页头标题   -->
+    <title> 应用视觉设计：「26」通过 CSS 的 transform 属性 scale() 函数在悬停时缩放图片</title> 
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <style type="text/css">
+
+      .img-scale:hover {
+        transform: scale(1.0);
+      }
+
+      .img-scale {
+          transform: scale(-0.8, 0.6);
+      }
+
+      .div-bg-gif {
+        background-image: url(https://www.icoderoad.com/Applied-Visual-Design/images/bg.gif );
+      }
+
+      .div-bg-linear-gradient2{
+        border-radius: 12px;
+        width: 86%;
+        height: 46%;
+        margin: 10px auto;
+        background: repeating-linear-gradient(
+          55deg,
+          yellow 0px,
+          blue 40px,
+          green 40px,
+          red 80px
+        );
+      }
+
+      .div-bg-linear-gradient1{
+        border-radius: 12px;
+        width: 86%;
+        height: 46%;
+        margin: 10px auto;
+        background: linear-gradient(yellow, blue 20%, #0f0);
+      }
+
+      .img-balloon5 {
+        border-radius: 12px;
+        display: block;
+        width: 86%;
+        height: 42%;
+        margin: 10px auto;
+      }
+
+      .orange {
+        background-color: hsl(39, 100%, 76%);
+      }
+
+      .cyan {
+        background-color: hsl(180, 100%, 50%);
+      }
+
+      .raspberry {
+        background-color: hsl(330, 100%, 56%);
+      }
+
+      .p-hue {
+        font-size:17px;
+      }
+
+      .mt-10 {
+        margin-top: 10px;
+      }
+
+      .span-round {
+        display: inline-block;
+        font-size: 17px;
+        text-align: center;
+        padding: 40px auto;
+        line-height: 80px;
+        width: 80px;
+        height: 80px;
+        margin-left: 10px;
+        border: 1px dotted #ccc;
+        border-radius: 8px;
+      }
+
+     .header {
+        z-index: 1000;
+        background-color: #09A7A1;
+      }
+
+      .nav {
+       background-color: hsl(180, 75%, 30%);
+      }
+
+      .menu li {
+        width: 243px;
+        background-color: #FF790E;
+      }
+
+      .menu li:last-child {
+        margin-right:5px;
+      }
+
+      .menu a:link {
+          color: white;
+      }
+
+      .book-title{
+        color: #09A7A1;
+      }
+
+      .footer {
+        background-color: #09A7A1;
+      }
+
+      .img-wrap {
+         position: relative;
+         top: 0px;
+         left: 0px;
+         width: 305px;
+      }
+
+      .img-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+
+      .img-size {
+           width: 263px;
+           height: 175px;
+      }
+
+      .two-columns{
+        margin-top: 20px;
+        width: 100%;
+        padding: 10px 0px;
+      }
+
+      .sec-left {
+        float: left;
+        width: 50%;
+        height: 80px;
+        border: 1px dashed #ccc;
+      }
+
+      .sec-right {
+        float: right;
+        text-align: right;
+        width: 50%;
+        height: 80px;
+        border: 1px dashed #ccc;
+      }
+
+      .layout {
+        padding-top: 5px;
+      }
+
+      .header {
+        position: fixed;
+        left: 0;
+        right: 0;
+        margin: 10px auto 10px;
+      }
+
+      .nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+      }
+
+      .text-tip {
+        display: inline-block;
+        text-align: center;
+        width: 260px;
+        height: 20px;
+        position: absolute;
+        top: 150px;
+        left: 93px;
+        transform: rotate(315deg);
+        -ms-transform: rotate(315deg);
+        -moz-transform: rotate(315deg);
+        -webkit-transform: rotate(315deg);
+        -o-transform: rotate(315deg);
+        border: 1px dashed;
+        background: #57DD43;
+      }
+
+      .offset {
+        background: none;
+        border: 2px dashed #9799a7;
+        height: 200px;
+        padding: 0;
+        position: relative;
+        text-overflow:ellipsis; 
+        white-space:nowrap;
+        overflow: hidden;
+      }
+
+      .offset img {
+        display: block;
+        width: 260px;
+        height: 200px;
+      }
+
+      .box-shadow p {
+        position: relative;
+        top: 0.9em;
+      }
+
+      .welcome  h1 {
+          font-weight: 800;
+          font-size: 40px;
+          text-transform: capitalize;
+          color:  #FF3EFF;
+      }
+
+      .welcome  h2 {
+          position: relative;
+          top: 15px;
+          font-weight: 600;
+          font-size: 30px;
+          text-transform: lowercase;
+          color:  #0000FF;
+      }
+
+      .welcome  h3 {
+          font-weight: 500;
+          font-size: 23.72px;
+          text-transform: uppercase;
+          color: #00DD00;
+      }
+
+      .welcome  h4 {
+          font-weight: 400;
+          font-size: 21px;
+      }
+
+      .welcome  h5 {
+          font-weight: 300;
+          font-size: 17.28px;
+      }
+
+      .welcome  h6 {
+          font-weight: 200;
+          font-size: 15px;
+      }
+
+      .welcome {
+        font-size: 16px !important;
+      }
+
+      .welcome img{
+        border-radius: 6px;
+        opacity: 0.3;
+        filter:alpha(opacity=30); /* 针对 IE8 以及更早的版本 */
+      }
+
+      .welcome img:hover{
+        cursor: pointer;
+        opacity: 1.0;
+        filter:alpha(opacity=100); /* 针对 IE8 以及更早的版本 */
+      }
+
+
+      .box-shadow {
+        box-shadow: 0 12px 23px rgba(0,0,0,0.21), 0 8px 11px rgba(0,0,0,0.26);
+      }
+
+      hr.linear-gradient {      
+          margin-top:10px;
+          border: 0;
+          height: 4px;
+          background-image: linear-gradient(to right, red, #333, rgba(9, 206, 91));
+      }
+
+      .book-title {
+        padding: 10px;
+         background-color:rgba(45, 45, 45, 0.1);
+      }
+
+      .fw-100 {
+          font-weight: 100;
+          text-decoration: underline;
+      }
+      .fw-300 {
+          font-weight: 300;
+          text-decoration: line-through;
+      }
+      .fw-900{
+          font-weight: 900;
+          text-decoration: overline;
+      }
+      .lighter {
+        font-weight: lighter;
+         text-decoration: underline overline line-through;
+      }
+      
+      .normal {
+        font-weight: normal;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+      .bolder {
+        font-weight: bolder;
+      }
+
+
+      p{
+        text-align: justify;
+        text-indent: 25px;
+        line-height: 33px;
+      }
+
+      h4{
+         font-size: 30px;
+         text-align: center;
+      }
+
+      html {
+        box-sizing: border-box;
+        font: 87.5%/1.4 AlibabaPuHuiTi-Heavy，HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .wrapper {
+        list-style: none;
+        margin: 150px auto 0 auto;
+        padding: 0;
+        display: grid;
+        max-width: 1300px;
+        grid-template-columns: 1fr;   
+        grid-template-rows: auto;
+        grid-auto-flow: dense;
+      }
+
+      @media (min-width: 460px) {
+        .wrapper {
+          grid-template-columns: 1fr 1fr;
+        } 
+
+        .text {
+          grid-column: 1 / 3;
+          line-height: 1.5 ;
+        }
+       }  
+
+       @media (min-width: 660px) {
+        .wrapper {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        } 
+
+        .text {
+          grid-column: 2 / 4;
+          grid-row: 1 / 3;
+        }
+
+        .text p {
+          line-height: 1.9em;
+        }
+
+        .wide {
+          grid-column: auto / span 2;
+        }
+       }
+
+      .wrapper li {
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+      }
+
+    </style>
+  </head>
+<body id="pageBody">
+  <div class="layout">
+     <!--页面标题-->
+      <header class="header">
+          <h3>
+            三、应用视觉设计
+          </h3>
+          <!--页面导航-->
+          <nav class="nav mt10">
+            <ul class="menu">
+                  <li><a href="#" >页面导航-header标签</a></li>
+                  <li><a href="#">应用视觉设计</a></li>
+                  <li><a href="#">aside标签</a></li>
+                  <li><a href="#">main标签</a></li>
+                  <li><a href="#">footer标签</a></li>
+              </ul>
+          </nav>
+      </header>
+    
+       <ul class="wrapper">   
+
+          <li class="text ">  
+          <p>Web 开发中的视觉设计是一个广泛的主题。它结合了版式、色彩、图形、动画和页面布局，以帮助传递网站的信息。好的设计的定义是一个讨论得很充分的主题，许多主题都在其中。</p>
+          <p>从根本上讲，大多数 Web 内容都会为用户提供信息。页面的视觉设计会影响其显示方式和用户体验。在 Web 开发中，HTML 为页面内容赋予结构和语义，而 CSS 控制页面的布局和外观。</p>
+          <p>本专辑主要介绍开发人员用来创建自己的视觉设计的一些基本方法。</p>
+          <p>本专辑示例页面框架在 CSS 层叠样式表基础知识基础上进行了调整，将主内容区的浮动布局调整为比较流行的 grid 布局方式。除了正中内容介绍部分外，其他每个图片区域会调整为具体知识的相应示例内容，默认无内容时使用气球图片进行点位。大家浏览示例页面时，给大家一个比较直观的视觉效果。</p>
+          </li>
+          <li class="box-shadow">
+            <h4 class="book-title">曾国藩的启示</h4>
+            <hr class="linear-gradient">
+            <p>
+              <span class="bolder">每个人一辈子只喝两杯酒：</span> <span class="lighter">一杯苦酒，</span><span class="normal">一杯甜酒。</span><span class="bold">关键就看你怎么喝，你先把甜的灌下去喝光，后面就会受罪。</span> <span class="fw-100">其实</span> <span class="fw-300">我们</span><span class="fw-900">宁可</span>年轻的时候受点罪、吃点苦，然后随着自己成长，以后就会越来越轻松。
+            </p>
+
+          </li>
+          <li class="welcome box-shadow">
+            <div class="offset">
+              <img src="../images/balloon2.jpg" alt="hot air balloon" />
+              <span class="text-tip">热气球2图片</span>
+            </div>
+
+            <div class="two-columns">
+                <section class="sec-left">
+                    <h1 style="font-size: 20px">Welcome H1 </h1>
+                    <h2 style="font-size: 18px">Welcome H2</h2>
+                    <h3 style="font-size: 16px">Welcome H3</h3>
+                </section>
+                 <section class="sec-right">
+                    <h4 style="text-align:right; font-size:16px;">Welcome H4</h4>
+                    <h5>Welcome H5</h5>
+                    <h6>Welcome H6</h6>
+                </section>
+            </div>
+            
+           
+          </li>
+          
+          <li class="box-shadow">
+            <div class="img-wrap">
+              <span class="span-round orange">橙色</span>
+              <span class="span-round cyan">蓝绿色</span>
+              <span class="span-round raspberry">树莓红色</span>
+              <div class="mt-10">
+                <p style="color: hsl(39, 100%, 76%);"  class="p-hue">橙色：hsl(39, 100%, 76%)</p>
+                <p style="color: hsl(180, 100%, 50%);" class="p-hue">蓝绿色：hsl(180，100％，50％)</p>
+                <p style="color: hsl(330, 100%, 56%);" class="p-hue">树莓红色：hsl(330，100％，56％)</p>
+              </div>
+            </div>
+            <div class="mt-10">
+              <p style="font-size: 16px;"><span style="color:#FF0000;">红色（#FF0000）</span> 和 <span style="color:#00FFFF">青色（#00FFFF）</span></p>
+              <p style="font-size: 16px;"><span style="color:#00FF00;">绿色（#00FF00）</span> 和 <span style="color:#FF00FF;">洋红（#FF00FF）</span></p>
+              <p style="font-size: 16px;"><span style="color:#0000FF;">蓝色（#0000FF）</span> 和 <span style="color:#FFFF00;">黄色（#FFFF00）</span></p>
+            </div>
+          </li>
+
+          <li class="wide box-shadow" >
+              <img src="../images/balloon4.jpg" alt="hot air balloon"  class="img-scale"/>
+              <p>气球图片 4</p>
+          </li>
+
+          <li class="box-shadow div-bg-gif">
+            <div class="div-bg-linear-gradient1"></div>
+            <div class="div-bg-linear-gradient2"></div>
+          </li>
+
+          <li><img src="../images/balloon6.jpg" alt="hot air balloon" />
+          <p>气球图片 6</p></li>
+          <!--
+          <li class="wide"><img src="../images/balloon7.jpg" alt="hot air balloon" />
+          <p>气球图片 7</p></li>
+          -->
+           <li class="box-shadow"><img src="../images/balloon7.jpg" alt="hot air balloon" />
+            <p>气球图片 7</p></li>
+        </ul>
+
+
+       <!--页脚-->
+      <footer class="footer">页脚-&copy;路条编程版权所有</footer>
+     
+  </div>
+</body>
+</html>
