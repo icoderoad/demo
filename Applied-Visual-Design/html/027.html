@@ -4,9 +4,48 @@
   <head> 
     <meta charset="utf-8">
     <!--注释   页头标题   -->
-    <title> 应用视觉设计：「25」通过 CSS 的 transform 属性 scale() 函数改变元素的大小</title> 
+    <title> 应用视觉设计：「27」使用 CSS Transform 属性的 skewX 和 skewY 函数沿 X 和 Y 轴倾斜元素</title> 
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <style type="text/css">
+      .div-skew {
+        display: flex;
+        justify-content: space-between ;
+      }
+
+      .div-original,
+      .div-skew-box {
+        border-radius: 6px;
+      }
+
+      .div-original {
+        background: #eaeaed;
+        border: 1px dashed #cecfd5;
+        float: left;
+        margin: 12px 15px;
+      }
+
+      .div-skew-box {
+        background: #FF790E;
+        color: white;
+        height: 95px;
+        line-height: 95px;
+        text-align: center;
+        width: 95px;
+      }
+
+      .div-box-1 {
+        transform: skewX(5deg);
+      }
+      .div-box-2 {
+        transform: skewY(-20deg);
+      }
+      .div-box-3 {
+        transform: skew(15deg, -30deg);
+      }
+
+      .img-scale:hover {
+        transform: scale(1.0);
+      }
 
       .img-scale {
           transform: scale(-0.8, 0.6);
@@ -457,8 +496,23 @@
           </li>
 
           <li class="wide box-shadow" >
+
               <img src="../images/balloon4.jpg" alt="hot air balloon"  class="img-scale"/>
-              <p>气球图片 4</p>
+
+              <div class="mt-10 div-skew">
+                  <div class="div-original">
+                    <div class="div-skew-box div-box-1">矩形 1</div>
+                </div>
+
+                <div class="div-original">
+                    <div class="div-skew-box div-box-2">矩形 2</div>
+                </div>
+
+                <div class="div-original">
+                    <div class="div-skew-box div-box-3">矩形 3</div>
+                </div>
+              </div>
+
           </li>
 
           <li class="box-shadow div-bg-gif">
