@@ -4,9 +4,40 @@
   <head> 
     <meta charset="utf-8">
     <!--注释   页头标题   -->
-    <title> 应用视觉设计：「34」使用 CSS 动画属性 animation-timing-function 控制动画元素在动画持续时间内变化的速度</title> 
+    <title> 应用视觉设计：「35」使用 CSS 动画属性 animation-timing-function 的 cubic-bezier 函数控制动画元素</title> 
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <style type="text/css">
+          .balls {
+            border-radius: 50%;
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            top: 70%;
+            animation-name: jump;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+          }
+          .orange {
+            background: #FF790E;
+            left:75%;
+            animation-timing-function: linear;
+          }
+          .gray {
+            background: #eaeaed;
+            left:82%;
+            animation-timing-function: ease-out;
+          }
+          .green {
+            left:90%;
+            background: greenyellow;
+            animation-timing-function: cubic-bezier(0.311、0.441、0.444、1.649 );
+          }
+
+          @keyframes jump {
+            50% {
+              top: 10%;
+            }
+          }
 
          .circle-div {
             height: 80px;
@@ -66,6 +97,7 @@
               top: 0px;
             }
         }
+
 
         .div-original-heart{
           height: 95px;
@@ -647,7 +679,7 @@
           <li>
             <img src="../images/balloon6.jpg" alt="hot air balloon" />
             <p>气球图片 6</p>
-            <div class="div-skew">
+            <div class="div-skew" style="position: relative">
               <div class="circle-div circle-anim"></div> 
               <div class="circle-div circle-anim2"></div>
             </div>
@@ -657,7 +689,13 @@
           <p>气球图片 7</p></li>
           -->
            <li class="box-shadow"><img src="../images/balloon7.jpg" alt="hot air balloon" />
-            <p>气球图片 7</p></li>
+            <p>气球图片 7</p>
+            <div class="div-skew">
+              <div class="balls orange" ></div>
+              <div class="balls gray" ></div>
+              <div class="balls green" ></div>
+            </div>
+          </li>
         </ul>
 
 
