@@ -4,13 +4,24 @@
   <head> 
     <meta charset="utf-8">
     <!--注释   页头标题   -->
-    <title> 无障碍网页设计：「06」使用 audio 元素提高音频内容的可访问性 </title> 
+    <title> 无障碍网页设计：「07」使用 figure 元素提高图片的可读性 </title> 
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <style type="text/css">
-    
+
       .card audio {
         width:90%; 
         margin-top:20px;
+      }
+
+      .card figure {
+        margin-top: 20px;
+        padding: 5px;
+        border: 1px  dashed #ccc ;
+        border-radius: 5px;
+      }
+
+      .card figcaption {
+        text-align: center;
       }
       
     </style>
@@ -67,7 +78,7 @@
                   </div>
               </article>
               <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
-                 <div class="card">
+                 <div class="card" >
                     <main>
                       <div>
                         <h2>CSS 层叠样式表基础知识</h2>
@@ -87,15 +98,23 @@
               </article>
               <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
                  <div class="card">
-                    <audio id="icode-road-model4-audio"  controls  autoplay loop style="width:90%; margin-top:20px; " >
+                    <audio id="icode-road-model4-audio"  controls  autoplay loop  >
                       <source src="https://www.icoderoad.com/admin/assets/yqxs.mp3" type="audio/mpeg" autoplay />
                       您的浏览器不支持音频标签，这是一首半阳的歌曲 “一曲相思”
                     </audio>
+
+                     <figure>
+                        <img src="../images/autumn.jpg" alt="秋分时节"/>
+                        <br>
+                        <figcaption>  
+                          八月秋分白露交
+                    </figcaption>
+                  </figure>
                 </div>
               </article>
               <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
                  <div class="card">
-                    模块5
+                  模块5
                     <hr>
                     <hr>
                     <hr>
