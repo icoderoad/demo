@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html >
+  <!--注释   页头   -->
+  <head> 
+    <meta charset="utf-8">
+    <!--注释   页头标题   -->
+    <title> 无障碍网页设计：「08」使用 label、fieldset 元素提高表单的可读性 </title> 
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <style type="text/css">
+
+      .card audio {
+        width:90%; 
+        margin-top:20px;
+      }
+
+      .card figure , .card fieldset{
+        margin-top: 20px;
+        padding: 5px;
+        border: 1px  dashed #ccc ;
+        border-radius: 5px;
+      }
+
+      .card figcaption , .card legend{
+        text-align: center;
+      }
+      
+      .grid-two-cols {
+        display: grid;
+        grid-template-columns: 30% 70% ;
+        grid-template-rows: 33% 33% 33%;
+        align-items: center;
+      }
+
+      .grid-two-cols input {
+          margin-left: 50px;
+      }
+
+    </style>
+  </head>
+<body id="pageBody">
+  <div class="layout">
+     <!--页面标题-->
+       <header class="header">
+          <div class="header-main ">
+            <div class="header-main-left ">
+                <div class="nav-header-logo">
+                  <img src="../images/logo.png" alt="logo">
+                  <h1>路条编程</h1>
+                </div>
+            </div>
+            <nav class="nav" style="flex: 1 1 0%;">
+              <ul class="menu">
+                    <li><a href="../../html-base/html/index.html" target="_blank">HTML基础</a></li>
+                    <li><a href="../../css-base/html/index.html" target="_blank">CSS基础</a></li>
+                    <li><a href="../../Applied-Visual-Design/html/index.html" target="_blank">应用视觉设计</a></li>
+                    <li><a href="#" ><span class="current">无障碍网页设计</span></a></li>
+                    <li><a href="#">Flex布局</a></li>
+                    <li><a href="#">Grid布局</a></li>
+                </ul>
+            </nav>
+            <div style="min-width: 53px;"></div>
+          </div>
+      </header>
+      <div class="wrapper m48">
+        <div class="wide">
+            <div class="archive">
+              <article class="article ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                <div class="card">
+                  <p>红冠公鸡正在啼叫</p>
+                  <img src="../images/html02-alt-tag-image.png" alt="红冠公鸡正在啼叫">
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                      <h2>响应式网页设计</h2>
+                      <section>
+                        <h3>一、HTML & HTML5 基础知识</h3>
+                        <h5>「01」html-base介绍</h5>
+                        <h5>「02」使用HTML元素显示欢迎信息</h5>
+
+                        <h3>二、CSS 层叠样式表基础知识</h3>
+                        <h5>「01」CSS简介</h5>
+                        <h5>「02」通过样式表修改页面文本颜色</h5>
+
+                        <h3>三、应用视觉设计</h3>
+                        <h5>「01」应用视觉设计简介</h5>
+                        <h5>「02」使用文本对齐属性创建视觉平衡</h5>
+                      </section>
+                  </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card" >
+                    <main>
+                      <div>
+                        <h2>CSS 层叠样式表基础知识</h2>
+                        <p>CSS 是一种标准的样式表语言，用于描述网页的布局和格式...</p>
+                      </div>
+                      <article>
+                        <h3>通过样式表修改页面文本颜色</h3>
+                        <p>通过 CSS 改变页面文本的颜色有3种方式...</p>
+                      </article>
+
+                      <article>
+                        <h3>通过样式表简单选择器修改页面元素样式</h3>
+                        <p>选择器是 CSS 规则的一部分且位于 CSS 声明块前。...</p>
+                      </article>
+                    </main>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    <audio id="icode-road-model4-audio"  controls  autoplay loop  >
+                      <source src="https://www.icoderoad.com/admin/assets/yqxs.mp3" type="audio/mpeg" autoplay />
+                      您的浏览器不支持音频标签，这是一首半阳的歌曲 “一曲相思”
+                    </audio>
+
+                     <figure>
+                        <img src="../images/autumn.jpg" alt="秋分时节"/>
+                        <br>
+                        <figcaption>  
+                          八月秋分白露交
+                    </figcaption>
+                  </figure>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                      <form>
+                        <fieldset>
+                          <legend>您目前学历是？</legend>
+                          <div class="grid-two-cols">                           
+                              <input id="bachelor" type="radio" name="education" value="bachelor">
+                              <label for="bachelor">本科</label>
+                               
+                              <input id="master" type="radio" name="education" value="master">
+                              <label for="master">硕士</label>
+                             
+                              <input id="doctorial" type="radio" name="education" value="doctorial">
+                              <label for="doctorial">博士</label>
+                          </div>
+                        </fieldset>
+                      </form>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块6
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                     模块7
+                    <hr class="image"><hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块8
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块9
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块10
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块11
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块12
+                    <hr class="image"><hr>
+                    <hr>
+                    <hr>
+                  </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块13
+                    <hr class="image"><hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块14
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块15
+                    <hr class="image">
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                  </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块16
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                  </div>
+              </article>
+             
+          </div>
+        </div>
+
+       <!--页脚-->
+      <footer class="footer">ICodeRoad-&copy;路条编程版权所有</footer>
+  </div>
+</body>
+</html>
