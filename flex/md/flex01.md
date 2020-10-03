@@ -1,4 +1,4 @@
-![](https://www.icoderoad.com/demo/flex/html/images/flexbox.png)
+![](https://www.icoderoad.com/demo/flex/images/flexbox.png)
 
 欢迎关注路条编程网站，通过学习 CSS Flexbox 弹性布局这一系列文章，你将会逐步掌握 Flex 布局相关的知识。
 
