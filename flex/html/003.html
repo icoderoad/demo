@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html >
+  <!--注释   页头   -->
+  <head> 
+    <meta charset="utf-8">
+    <!--注释   页头标题   -->
+    <title> CSS Flexbox 弹性布局：「03」Flex 容器 flex-direction 属性设置项目排列方向 </title> 
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+    <style type="text/css">
+      .container {
+          display:flex;
+      }
+
+      .justify-content-center{
+        justify-content: center;
+      }
+      .container-direction-row-reverse {
+          flex-direction: row-reverse;
+      }
+
+       .container-direction-column {
+          flex-direction: column;
+          width:25%;
+      }
+
+      .container-direction-column-reverse {
+          flex-direction: column-reverse;
+           width:25%;
+      }
+
+      .container .img1 {
+        margin-left: 8px;
+      }
+
+      .container .img2 {
+        margin-right: 8px;
+      }
+
+      .container .img3 {
+        margin-top: 42px;
+      }
+
+      .container .img4 {
+        margin-top: 42px;
+      }
+
+
+      .box {
+        color:white;
+        font-size: 26px;
+        text-align: center;
+        text-shadow:4px 4px 0 rgba(0,0,0,0.1);
+        padding:10px;
+        vertical-align: middle;
+        margin: 5px;
+        color: white;
+        line-height: 20px;
+      }
+
+      .box-img {
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      .box-item1 {background:#1abc9c;}
+      .box-item2 {background:#3498db;}
+      .box-item3 {background:#9b59b6;}
+      .box-item4 { background:#34495e;}
+      .box-item5 { background:#f1c40f;}
+      .box-item6 { background:#e67e22;}
+      .box-item7 { background:#e74c3c;}
+      .box-item8 { background:#bdc3c7;}
+
+    </style>
+  </head>
+<body id="pageBody">
+  <div class="layout">
+     <!--页面标题-->
+       <header class="header">
+          <div class="header-main ">
+            <div class="header-main-left ">
+                <div class="nav-header-logo">
+                  <img src="../../static/images/logo.png" alt="logo">
+                  <h1>路条编程</h1>
+                </div>
+            </div>
+            <nav class="nav" style="flex: 1 1 0%;">
+              <ul class="menu">
+                    <li><a href="../../html-base/html/index.html" target="_blank">HTML基础</a></li>
+                    <li><a href="../../css-base/html/index.html" target="_blank">CSS基础</a></li>
+                    <li><a href="../../Applied-Visual-Design/html/index.html" target="_blank">应用视觉设计</a></li>
+                    <li><a href="../../applied-accessibility/html/index.html" >无障碍网页设计</a></li>
+                    <li><a href="../../flex/html/index.html"><span class="current">Flex布局</span></a></li>
+                    <li><a href="#">Grid布局</a></li>
+                </ul>
+            </nav>
+            <div style="min-width: 53px;"></div>
+          </div>
+      </header>
+      <div class="wrapper m48">
+        <div class="wide">
+            <div class="archive">
+              <article class="article ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                <div class="card">
+                     <div class="container justify-content-center">
+                      <div class="box box-item1">1</div>
+                      <div class="box box-item2">2</div>
+                      <div class="box box-item3">3</div>
+                      <div class="box box-item4">4</div>
+                    </div>
+                    <div class="container justify-content-center">
+                         <img src="../images/arrow1.png" width="60%" class="img1"/>
+                    </div>
+                    <div class="container container-direction-row-reverse justify-content-center">
+                       <div class="box box-item5">5</div>
+                      <div class="box box-item6">6</div>
+                      <div class="box box-item7">7</div>
+                      <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container container-direction-row-reverse justify-content-center">
+                        <img src="../images/arrow2.png" width="60%" class="img2"/>
+                    </div>
+                    <div class="container justify-content-center">
+                       <div class=" container-direction-column">
+                        <div class="box box-item1" >1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                      </div>
+                      <div class="box-img"> <img src="../images/arrow3.png" width="60%" class="img3"/></div>
+                       <div class=" container-direction-column-reverse">
+                         <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                      </div>
+                      <div class="box-img"> <img src="../images/arrow4.png" width="60%" class="img4"/></div>
+                    </div>
+
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块2
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                  </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块3
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块4
+                    <hr class="image"><hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块5
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块6
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                     模块7
+                    <hr class="image"><hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块8
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块9
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块10
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块11
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块12
+                    <hr class="image"><hr>
+                    <hr>
+                    <hr>
+                  </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块13
+                    <hr class="image"><hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块14
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块15
+                    <hr class="image">
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                  </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块16
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                  </div>
+              </article>
+             
+          </div>
+        </div>
+
+       <!--页脚-->
+      <footer class="footer">ICodeRoad-&copy;路条编程版权所有</footer>
+  </div>
+</body>
+</html>
