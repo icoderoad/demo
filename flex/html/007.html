@@ -4,13 +4,47 @@
   <head> 
     <meta charset="utf-8">
     <!--注释   页头标题   -->
-    <title> CSS Flexbox 弹性布局：「06」通过 align-items 属性设置在交叉轴上如何对齐项目 </title> 
+    <title> CSS Flexbox 弹性布局：「07」通过 align-content 属性设置在多根轴线对齐项目 </title> 
     <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
     <style type="text/css">
-      .align-items-start {
-        align-items: flex-start;
+      .container-height {
+        height: 130px;
+      }
+      .align-content-start {
+        align-content: flex-start;
         margin-top: 10px;
       }
+
+      .align-content-end {
+        align-content: flex-end;
+        margin-top: 10px;
+      }
+
+      .align-content-center {
+        align-content: center;
+        margin-top: 10px;
+      }
+
+      .align-content-between {
+        align-content: space-between;
+        margin-top: 10px;
+      }
+
+      .align-content-around {
+        align-content: space-around;
+        margin-top: 10px;
+      }
+
+      .align-content-evenly {
+        align-content: space-evenly;
+        margin-top: 10px;
+      }
+
+      .align-content-stretch {
+        align-content: stretch;
+        margin-top: 10px;
+      }
+
 
       .align-items-end {
         align-items: flex-end;
@@ -333,7 +367,7 @@
               </article>
               <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
                  <div class="card">
-                    <div class="container title align-items-center">align-items 属性示例</div>
+                    <div class="container title justify-content-center">align-items 属性示例</div>
                     <div class="container ft12 ">baseline: 项目的第一行文字的基线对齐。</div>
                     <div class="container-dashed nowrap align-items-baseline">
                         <div class="box box-short box-item5">5</div>
@@ -352,20 +386,89 @@
               </article>
               <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
                  <div class="card">
-                     模块7
-                    <hr class="image"><hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
-                    <hr>
+                    <div class="container title justify-content-center">align-content 属性示例</div>
+                    <div class="container">flex-start：交叉轴的起点对齐</div>
+                    <div class="container-dashed container-height wrap align-content-start">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container">flex-end：交叉轴的终点对齐</div>
+                    <div class="container-dashed container-height wrap align-content-end">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container">center : 与交叉轴的中点对齐</div>
+                    <div class="container-dashed container-height wrap align-content-center">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
                 </div>
               </article>
               <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
                  <div class="card">
-                    模块8
-                    <hr>
-                    <hr>
+                    <div class="container title justify-content-center">align-content 属性示例</div>
+                     <div class="container ft12 ">space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</div>
+                    <div class="container-dashed container-height wrap align-content-between">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container ft12 ">space-around：每根轴线两侧的间隔都相等。</div>
+                    <div class="container-dashed container-height wrap align-content-around">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                     <div class="container ft12 ">space-evenly：项目与项目的间隔相等，项目与容器边框之间也是同样长度的间隔。</div>
+                    <div class="container-dashed container-height wrap align-content-evenly">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container ft12 ">stretch（默认值）：轴线占满整个交叉轴。</div>
+                    <div class="container-dashed container-height wrap align-content-stretch">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
                 </div>
               </article>
               <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
