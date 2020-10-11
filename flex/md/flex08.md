@@ -21,6 +21,39 @@ order 属性语法示例如下所示：
 
 调整页面框架模块 9 内容， 增加容器类 .container-dashed ,在容器内放置 4 个项目，调整项目 3，4 的排列顺序，增加两个排序样式类 .order1, .order2，设置样式类 .order1 的 order 属性为 -2, .order2 的 order 属性为 -1。调整排序后的项目排列为 4、3、1 、2。
 
+调整样式代码如下所示：
+
+<style type="text/css">
+
+  .order2  {
+      order : -1;
+  }
+
+   .order1  {
+      order : -2;
+  }
+
+  .box-item3 div , .box-item4 div{
+    font-size: 14px;
+  }
+
+</style>
+
+调整 html 代码如下所示：
+
+<article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+	 <div class="card">
+	    <div class="container title justify-content-center">order 属性示例</div>
+	     <div class="container ft12 ">order:定义项目的排列顺序</div>
+	    <div class="container-dashed wrap align-content-between">
+	        <div class="box box-item1">1</div>
+	        <div class="box box-item2">2</div>
+	        <div class="box box-item3 order2">3<div>(order:-1)</div></div>
+	        <div class="box box-item4 order1">4<div>(order:-2)</div></div>
+	    </div>
+	</div>
+</article>
+
 保存页面代码，预览页面，整体效果图如下所示：
 
 ![](https://www.icoderoad.com/demo/flex/images/html08-show01.png)
