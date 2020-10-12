@@ -9,14 +9,54 @@
 
 与 flex-shrink 相对的是 flex-grow。你应该还记得，flex-shrink 会在容器太小时对元素作出调整。相应地，flex-grow 会在容器太大时对元素作出调整。
 
-例子与上一个挑战相似，如果一个项目flex-grow属性的值为 1，另一个flex-grow为 3，那么 3 的会比 1 的扩大三倍。
+例子与前篇文章相似，如果一个项目 flex-grow 属性的值为 1，另一个 flex-grow 为 3，那么 3 的会比 1 的扩大三倍。
 
 flex-grow 属性语法示例如下所示：
 
+<style type="text/css">
+
+.item {
+  flex-grow: 4; /* 默认值 0 */
+}
+
+</style>
+
+
+调整页面框架模块 11 内容， 增加样式类 .grow, flex-grow 属性值为 1 。在容器内放置 4 个项目，将项目 3 增加样式类 .grow3 ，flex-grow 属性值为 3。
+
+调整样式代码如下所示：
+
+<style type="text/css">
+
+  .grow {
+    flex-grow: 1;
+  }
+
+  .grow3 {
+    flex-grow: 3;
+  }
+
+
+</style>
+
+调整的 html 代码如下所示：
+
+<article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+	<div class="card">
+	    <div class="container title justify-content-center">flex-grow 属性示例</div>
+	    <div class="container ft12 ">flex-grow: 如果所有项目的 flex-grow 属性都为 1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为 3，其他项目都为 1，则前者占据的剩余空间将比其他项多两倍。</div>
+	    <div class="container-dashed wrap align-content-between">
+	        <div class="box box-item1 grow">1</div>
+	        <div class="box box-item2 grow">2</div>
+	        <div class="box box-item3 grow3">3<div>(flex-grow:3)</div></div>
+	        <div class="box box-item4 grow">4</div>
+	    </div>
+	</div>
+</article>
 
 保存页面代码，预览页面，整体效果图如下所示：
 
-![](https://www.icoderoad.com/demo/flex/images/html09-show01.png)
+![](https://www.icoderoad.com/demo/flex/images/html10-show01.png)
 
 <p style="color:red;">
 	<b>
