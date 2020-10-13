@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html >
+  <!--注释   页头   -->
+  <head> 
+    <meta charset="utf-8">
+    <!--注释   页头标题   -->
+    <title> CSS Flexbox 弹性布局：「11」使用 flex-basis 属性设置项目的初始大小</title> 
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+    <style type="text/css">
+      .basis {
+        flex-basis: 60px;
+      }
+
+      .basis-auto{
+        flex-basis: auto;
+      }
+
+      .grow {
+        flex-grow: 1;
+      }
+
+      .grow3 {
+        flex-grow: 3;
+      }
+
+      .shrink {
+        flex-shrink: 1;
+      }
+
+      .shrink0 {
+        flex-shrink: 0;
+      }
+
+      .order2  {
+          order : -1;
+      }
+
+       .order1  {
+          order : -2;
+      }
+
+      .box-item3 div , .box-item4 div{
+        font-size: 14px;
+      }
+
+      .container-height {
+        height: 130px;
+      }
+      .align-content-start {
+        align-content: flex-start;
+        margin-top: 10px;
+      }
+
+      .align-content-end {
+        align-content: flex-end;
+        margin-top: 10px;
+      }
+
+      .align-content-center {
+        align-content: center;
+        margin-top: 10px;
+      }
+
+      .align-content-between {
+        align-content: space-between;
+        margin-top: 10px;
+      }
+
+      .align-content-around {
+        align-content: space-around;
+        margin-top: 10px;
+      }
+
+      .align-content-evenly {
+        align-content: space-evenly;
+        margin-top: 10px;
+      }
+
+      .align-content-stretch {
+        align-content: stretch;
+        margin-top: 10px;
+      }
+
+
+      .align-items-end {
+        align-items: flex-end;
+        margin-top: 10px;
+      }
+
+      .align-items-center {
+        align-items: center;
+        margin-top: 10px;
+      }
+
+       .align-items-baseline {
+        align-items: baseline;
+        margin-top: 10px;
+      }
+      
+      .align-items-stretch {
+        align-items: stretch;
+        margin-top: 10px;
+      }
+
+      .container-dashed {
+          display:flex;
+          border: 1px dashed #ccc;
+          border-radius: 5px;
+          margin-bottom: 20px;
+      }
+
+      .ft12 {
+        font-size: 12px;
+      }
+      .title {
+        color: #1890ff;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .justify-content-start, .justify-content-end, .justify-content-center,
+      .justify-content-between, .justify-content-around{
+        margin-top: 10px;
+      }
+
+      .justify-content-start{
+        justify-content: flex-start ;
+      }
+
+      .justify-content-end{
+        justify-content: flex-end; 
+      }
+
+      .justify-content-center{
+        justify-content: center;
+      }
+
+      .justify-content-between{
+        justify-content: space-between;
+      }
+
+      .justify-content-around{
+        justify-content: space-around;
+      }
+
+      .nowrap  { 
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+      }
+
+      .wrap    { 
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+      }  
+
+      .wrap-reverse { 
+        -webkit-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+      }  
+
+      .container {
+          display:flex;
+      }
+
+      .container-direction-row-reverse {
+          flex-direction: row-reverse;
+      }
+
+       .container-direction-column {
+          flex-direction: column;
+          width:25%;
+      }
+
+      .container-direction-column-reverse {
+          flex-direction: column-reverse;
+           width:25%;
+      }
+
+      .container .img1 {
+        margin-left: 8px;
+      }
+
+      .container .img2 {
+        margin-right: 8px;
+      }
+
+      .container .img3 {
+        margin-top: 42px;
+      }
+
+      .container .img4 {
+        margin-top: 42px;
+      }
+
+
+      .box {
+        color:white;
+        font-size: 24px;
+        text-align: center;
+        text-shadow:4px 4px 0 rgba(0,0,0,0.1);
+        padding:10px;
+        vertical-align: middle;
+        margin: 2px;
+        color: white;
+        line-height: 20px;
+      }
+
+      .box-heigh {
+         line-height: 40px;
+      }
+
+      .box-short {
+         line-height: 10px;
+      }
+
+      .box-img {
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      .box-item1 {background:#1abc9c;}
+      .box-item2 {background:#3498db;}
+      .box-item3 {background:#9b59b6;}
+      .box-item4 { background:#34495e;}
+      .box-item5 { background:#f1c40f;}
+      .box-item6 { background:#e67e22;}
+      .box-item7 { background:#e74c3c;}
+      .box-item8 { background:#bdc3c7;}
+
+    </style>
+  </head>
+<body id="pageBody">
+  <div class="layout">
+     <!--页面标题-->
+       <header class="header">
+          <div class="header-main ">
+            <div class="header-main-left ">
+                <div class="nav-header-logo">
+                  <img src="../../static/images/logo.png" alt="logo">
+                  <h1>路条编程</h1>
+                </div>
+            </div>
+            <nav class="nav" style="flex: 1 1 0%;">
+              <ul class="menu">
+                    <li><a href="../../html-base/html/index.html" target="_blank">HTML基础</a></li>
+                    <li><a href="../../css-base/html/index.html" target="_blank">CSS基础</a></li>
+                    <li><a href="../../Applied-Visual-Design/html/index.html" target="_blank">应用视觉设计</a></li>
+                    <li><a href="../../applied-accessibility/html/index.html" >无障碍网页设计</a></li>
+                    <li><a href="../../flex/html/index.html"><span class="current">Flex布局</span></a></li>
+                    <li><a href="#">Grid布局</a></li>
+                </ul>
+            </nav>
+            <div style="min-width: 53px;"></div>
+          </div>
+      </header>
+      <div class="wrapper m48">
+        <div class="wide">
+            <div class="archive">
+              <article class="article ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                <div class="card">
+                     <div class="container justify-content-center">
+                      <div class="box box-item1">1</div>
+                      <div class="box box-item2">2</div>
+                      <div class="box box-item3">3</div>
+                      <div class="box box-item4">4</div>
+                    </div>
+                    <div class="container justify-content-center">
+                         <img src="../images/arrow1.png" width="60%" class="img1"/>
+                    </div>
+                    <div class="container container-direction-row-reverse justify-content-center">
+                       <div class="box box-item5">5</div>
+                      <div class="box box-item6">6</div>
+                      <div class="box box-item7">7</div>
+                      <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container container-direction-row-reverse justify-content-center">
+                        <img src="../images/arrow2.png" width="60%" class="img2"/>
+                    </div>
+                    <div class="container justify-content-center">
+                       <div class=" container-direction-column">
+                        <div class="box box-item1" >1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                      </div>
+                      <div class="box-img"> <img src="../images/arrow3.png" width="60%" class="img3"/></div>
+                       <div class=" container-direction-column-reverse">
+                         <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                      </div>
+                      <div class="box-img"> <img src="../images/arrow4.png" width="60%" class="img4"/></div>
+                    </div>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                     <div class="container-dashed nowrap">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container-dashed wrap">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container-dashed wrap-reverse">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                 </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    <div class="container title justify-content-center">justify-content 属性示例</div>
+                    <div class="container">flex-start(默认值) : 左对齐</div>
+                    <div class="container-dashed nowrap justify-content-start">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                    </div>
+                    <div class="container">flex-end : 右对齐</div>
+                    <div class="container-dashed nowrap justify-content-end">
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container">center : 居中</div>
+                    <div class="container-dashed nowrap justify-content-center">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                    </div>
+                   
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    <div class="container title justify-content-center">justify-content 属性示例</div>
+                    <div class="container ft12 ">space-between:两端对齐,项目之间间隔都相等。</div>
+                    <div class="container-dashed nowrap justify-content-between">
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container ft12 ">space-around:每个项目两侧的间隔相等。</div>
+                    <div class="container-dashed nowrap justify-content-around">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                    </div>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    <div class="container title justify-content-center">align-items 属性示例</div>
+                    <div class="container">flex-start：交叉轴的起点对齐</div>
+                    <div class="container-dashed nowrap align-items-start">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-heigh box-item2">2</div>
+                        <div class="box box-short box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                    </div>
+                    <div class="container">flex-end：交叉轴的终点对齐</div>
+                    <div class="container-dashed nowrap align-items-end">
+                        <div class="box box-heigh box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-short box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container">center : 居中</div>
+                    <div class="container-dashed nowrap align-items-center">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-heigh box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-short box-item4">4</div>
+                    </div>
+                   
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    <div class="container title justify-content-center">align-items 属性示例</div>
+                    <div class="container ft12 ">baseline: 项目的第一行文字的基线对齐。</div>
+                    <div class="container-dashed nowrap align-items-baseline">
+                        <div class="box box-short box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-heigh box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container ft12 ">stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</div>
+                    <div class="container-dashed nowrap align-items-stretch">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-short box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-heigh box-item4">4</div>
+                    </div>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    <div class="container title justify-content-center">align-content 属性示例</div>
+                    <div class="container">flex-start：交叉轴的起点对齐</div>
+                    <div class="container-dashed container-height wrap align-content-start">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container">flex-end：交叉轴的终点对齐</div>
+                    <div class="container-dashed container-height wrap align-content-end">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container">center : 与交叉轴的中点对齐</div>
+                    <div class="container-dashed container-height wrap align-content-center">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    <div class="container title justify-content-center">align-content 属性示例</div>
+                     <div class="container ft12 ">space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</div>
+                    <div class="container-dashed container-height wrap align-content-between">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container ft12 ">space-around：每根轴线两侧的间隔都相等。</div>
+                    <div class="container-dashed container-height wrap align-content-around">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                     <div class="container ft12 ">space-evenly：项目与项目的间隔相等，项目与容器边框之间也是同样长度的间隔。</div>
+                    <div class="container-dashed container-height wrap align-content-evenly">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                    <div class="container ft12 ">stretch（默认值）：轴线占满整个交叉轴。</div>
+                    <div class="container-dashed container-height wrap align-content-stretch">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3">3</div>
+                        <div class="box box-item4">4</div>
+                        <div class="box box-item5">5</div>
+                        <div class="box box-item6">6</div>
+                        <div class="box box-item7">7</div>
+                        <div class="box box-item8">8</div>
+                    </div>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    <div class="container title justify-content-center">order 属性示例</div>
+                    <div class="container ft12 ">order:定义项目的排列顺序</div>
+                    <div class="container-dashed wrap align-content-between">
+                        <div class="box box-item1">1</div>
+                        <div class="box box-item2">2</div>
+                        <div class="box box-item3 order2">3<div>(order:-1)</div></div>
+                        <div class="box box-item4 order1">4<div>(order:-2)</div></div>
+                    </div>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    <div class="container title justify-content-center">flex-shrink 属性示例</div>
+                    <div class="container ft12 ">flex-shrink：如果一个项目的 flex-shrink 属性为0，其他项目都为1，则空间不足时，前者不缩小。</div>
+                    <div class="container-dashed wrap align-content-between">
+                        <div class="box box-item1 shrink">1</div>
+                        <div class="box box-item2 shrink">2</div>
+                        <div class="box box-item3 shrink0">3<div>(flex-shrink:0)</div></div>
+                        <div class="box box-item4 shrink">4</div>
+                    </div>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    <div class="container title justify-content-center">flex-grow 属性示例</div>
+                    <div class="container ft12 ">flex-grow: 如果所有项目的 flex-grow 属性都为 1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为 3，其他项目都为 1，则前者占据的剩余空间将比其他项多两倍。</div>
+                    <div class="container-dashed wrap align-content-between">
+                        <div class="box box-item1 grow">1</div>
+                        <div class="box box-item2 grow">2</div>
+                        <div class="box box-item3 grow3">3<div>(flex-grow:3)</div></div>
+                        <div class="box box-item4 grow">4</div>
+                    </div>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">=
+                    <div class="container title justify-content-center">flex-basis 属性示例</div>
+                    <div class="container ft12 ">flex-basis: 如果所有项目的属性定义了在分配多余空间之前，项目占据的主轴空间（main size）</div>
+                    <div class="container-dashed wrap align-content-between">
+                        <div class="box box-item1 grow basis">1</div>
+                        <div class="box box-item2 grow3 basis-auto">2</div>
+                        <div class="box box-item3 grow basis">3</div>
+                    </div>
+                  </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块13
+                    <hr class="image"><hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块14
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块15
+                    <hr class="image">
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                  </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                 <div class="card">
+                    模块16
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                  </div>
+              </article>
+             
+          </div>
+        </div>
+
+       <!--页脚-->
+      <footer class="footer">ICodeRoad-&copy;路条编程版权所有</footer>
+  </div>
+</body>
+</html>
