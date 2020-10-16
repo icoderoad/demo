@@ -2,20 +2,21 @@ eg:
 https://css-tricks.com/snippets/css/complete-guide-grid/
 
 ## lesson1
-通过将属性display的值设为grid，使 HTML 元素变为网格容器。通过前面的操作，你可以对该容器使用与 CSS 网格（CSS Grid）相关的属性。
-简单地添加一个网格元素并不能取得很大的进展。你还需要明确网格的结构。在一个网格容器中使用grid-template-columns属性可以添加一些列，示例如下：
+通过将属性 display 的值设为 grid，使 HTML 元素变为网格容器。通过前面的操作，你可以对该容器使用与 CSS 网格（CSS Grid）相关的属性。
+简单地添加一个网格元素并不能取得很大的进展。你还需要明确网格的结构。在一个网格容器中使用 grid-template-columns 属性可以添加一些列，示例如下：
 
 .container {
   display: grid;
   grid-template-columns: 50px 50px;
 }
+
 上面的代码可以在网格容器中添加两列，宽度均为 50px。
 
-grid-template-columns属性值的个数表示网格的列数，而每个值表示对应列的宽度。
-用grid-template-rows为网格设置行数。
+grid-template-columns 属性值的个数表示网格的列数，而每个值表示对应列的宽度。
+用 grid-template-rows 为网格设置行数。
 
 使用 CSS 网格单位来更改列和行的大小
-在 CSS 网格中，可以使用绝对定位和相对定位单位如px和em来确定行或列的大小。下面的单位也可以使用：
+在 CSS 网格中，可以使用相对定位单位如 px 和 em 来确定行或列的大小。下面的单位也可以使用：
 
 fr：设置列或行占剩余空间的一个比例，
 
@@ -30,21 +31,21 @@ grid-template-columns: auto 50px 10% 2fr 1fr;
 
 ## lesson2
 使用 grid-column-gap 创建多列之间的间距
-到目前为止，在你所建立的网格中列都相互紧挨着。如果需要在列与列之间添加一些间隙，我们可以使用grid-column-gap：
+到目前为止，在你所建立的网格中列都相互紧挨着。如果需要在列与列之间添加一些间隙，我们可以使用 grid-column-gap 属性：
 
 grid-column-gap: 10px;
 这会在我们创建的所有列之间添加 10px 的空白间隙。
 和上个挑战在两列之间添加间隙一样，你可以用grid-row-gap在两行之间添加间隙。
 
-grid-gap是grid-row-gap和grid-column-gap的简写，它更方便使用。如果grid-gap有一个值，行与行之间和列与列之间将添加等于该值的间隙。但是，如果有两个值，第一个值将作为行间隙的高度值，第二个值是列间隙的宽度值。
+grid-gap 是 grid-row-gap 和 grid-column-gap 的简写，它更方便使用。如果 grid-gap 有一个值，行与行之间和列与列之间将添加等于该值的间隙。但是，如果有两个值，第一个值将作为行间隙的高度值，第二个值是列间隙的宽度值。
 
 ## lesson3
 使用 grid-column 来控制剩余部分
-到目前为止，所有的讨论都是围绕网格容器的。grid-column属性是第一个用于网格项本身的属性。
+到目前为止，所有的讨论都是围绕网格容器的。grid-column 属性是第一个用于网格项本身的属性。
 
-网格的假想水平线和垂直线被称为线（lines）。这些线在网格的左上角从 1 开始编号，垂直线向右、水平线向下累加计数。
+网格的假想水平线和垂直线被称为网格线（lines）。这些网格线在网格的左上角从 1 开始编号，垂直线向右、水平线向下累加计数。
 
-这是一个 3x3 网格的线条：
+这是一个 3x3 网格的网格线：
 ![095fee2af580fac511684248ba414992.png](:/988674bdd57548269b4a88e1c75d57e5)
 
 你可以用grid-column属性定义网格项开始和结束的位置，进而控制每个网格项占用的列数
