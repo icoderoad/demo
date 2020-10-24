@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html style="font-size: 22px">
+  <!--注释   页头   -->
+  <head>
+    <meta charset="utf-8">
+    <!--注释   页头标题   -->
+    <title> CSS Grid 网格布局：「08」使用 grid-template-areas 属性划分网格区域</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+    <style type="text/css">
+      .container {
+          display:grid;
+      }
+
+      .grid-template-main{
+        grid-template: 
+        "header header header" 1fr 
+        "advert content content" 1fr 
+        "advert content content" 1fr 
+        "footer footer footer" 1fr
+        /1fr 1fr 1fr;
+      }
+
+      .grid-area-main {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header header header"
+        "advert content content"
+        "footer footer footer";
+      }
+
+
+      .area-header {
+        grid-area: header; 
+      }
+
+      .area-advert {
+        grid-area: advert; 
+      }
+
+      .area-content {
+        grid-area: content; 
+      }
+
+      .area-footer {
+        grid-area: footer; 
+      }
+
+      .col3-minmax {
+         grid-template-rows: minmax(100px, 1fr);
+         grid-template-columns: minmax(auto, 50%) 1fr 3em;
+      }
+
+      .col3-repeat {
+        grid-template-columns: 30px repeat(3, 1fr) 50px;
+      }
+
+      .rows3-col3 {
+          grid-gap: 8px 3px;
+          grid-template-columns: [first] 40px [line2] 50px [line3] auto ;
+          grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto ;
+      }
+
+      .col5{
+        grid-template-columns: auto 50px 10% 2fr 1fr;
+      }
+
+      .col5-2{
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          grid-column-gap: 10px;
+      }
+
+      .box {   
+          color:white;
+          font-size: 24px;
+          text-align: center;
+          text-shadow:4px 4px 0 rgba(0,0,0,0.1);
+          padding:10px;
+          vertical-align: middle;
+          margin: 2px;
+          color: white;
+          line-height: 20px;
+      }
+
+      .item1 {background:#1abc9c;}
+      .item2 {background:#3498db;}
+      .item3 {background:#9b59b6;}
+      .item4 { background:#34495e;}
+      .item5 { background:#f1c40f;}
+      .item6 { background:#e67e22;}
+      .item7 { background:#e74c3c;}
+      .item8 { background:#bdc3c7;}  
+      .item9 { background:#2ecc71;}
+      .item10 { background:#16a085;}
+
+    </style>
+  </head>
+  <body id="pageBody">
+    <div class="layout">
+       <!--页面标题-->
+         <header class="header">
+            <div class="header-main ">
+              <div class="header-main-left ">
+                  <div class="nav-header-logo">
+                    <img src="../../static/images/logo.png" alt="logo">
+                    <h1>路条编程</h1>
+                  </div>
+              </div>
+              <nav class="nav" style="flex: 1 1 0%;">
+                <ul class="menu">
+                      <li><a href="../../html-base/html/index.html" target="_blank">HTML基础</a></li>
+                      <li><a href="../../css-base/html/index.html" target="_blank">CSS基础</a></li>
+                      <li><a href="../../Applied-Visual-Design/html/index.html" target="_blank">应用视觉设计</a></li>
+                      <li><a href="../../applied-accessibility/html/index.html" >无障碍网页设计</a></li>
+                      <li><a href="../../flex/html/index.html">Flex布局</a></li>
+                      <li><a href="../../grid/html/index.html"><span class="current">Grid布局</span></a></li>
+                  </ul>
+              </nav>
+              <div style="min-width: 53px;"></div>
+            </div>
+        </header>
+        <div class="wrapper m48">
+          <div class="wide">
+              <div class="archive">
+                <article class="article ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                  <div class="card">
+                        <div class="container col5">
+                          <div class="box item1">1</div>
+                          <div class="box item2">2</div>
+                          <div class="box item3">3</div>
+                          <div class="box item4">4</div>
+                          <div class="box item5">5</div>
+                        </div>
+                  </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">
+                      <div class="container col5-2">
+                          <div class="box item1">1</div>
+                          <div class="box item2">2</div>
+                          <div class="box item3">3</div>
+                          <div class="box item4">4</div>
+                          <div class="box item5">5</div>
+                      </div>
+                    </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">
+                      <div class="container rows3-col3 ">
+                          <div class="box item1">1</div>
+                          <div class="box item2">2</div>
+                          <div class="box item3">3</div>
+                          <div class="box item4">4</div>
+                          <div class="box item5">5</div>
+                          <div class="box item6">6</div>
+                          <div class="box item7">7</div>
+                          <div class="box item8">8</div>
+                          <div class="box item9">9</div>
+                      </div>
+                  </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">                
+                      <div class="container col3-repeat ">
+                          <div class="box item1">1</div>
+                          <div class="box item2">2</div>
+                          <div class="box item3">3</div>
+                          <div class="box item4">4</div>
+                          <div class="box item5">5</div>
+                          <div class="box item6">6</div>
+                          <div class="box item7">7</div>
+                          <div class="box item8">8</div>
+                          <div class="box item9">9</div>
+                          <div class="box item10">10</div>
+                      </div>
+                  </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">
+                       <div class="container col3-minmax ">
+                          <div class="box item1">1</div>
+                          <div class="box item2">2</div>
+                          <div class="box item3">3</div>
+                          <div class="box item4">4</div>
+                          <div class="box item5">5</div>
+                          <div class="box item6">6</div>
+                          <div class="box item7">7</div>
+                          <div class="box item8">8</div>
+                          <div class="box item9">9</div>
+                      </div>
+                  </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">
+                      <div class="container grid-area-main">
+                          <div class="box item1 area-header">header</div>
+                          <div class="box item2 area-advert">advert</div>
+                          <div class="box item3 area-content">content</div>
+                          <div class="box item4 area-footer">footer</div> 
+                      </div>
+                  </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">
+                        <div class="container grid-template-main">
+                          <div class="box item1 area-header">页头区</div>
+                          <div class="box item2 area-advert">广告区</div>
+                          <div class="box item3 area-content">内容区</div>
+                          <div class="box item4 area-footer">页尾区</div> 
+                      </div>
+                  </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">
+                      模块8
+                      <hr>
+                      <hr>
+                  </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">
+                      模块9
+                      <hr>
+                      <hr>
+                      <hr>
+                  </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">
+                      模块10
+                      <hr>
+                      <hr>
+                  </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">
+                      模块11
+                      <hr>
+                      <hr>
+                      <hr>
+                  </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">
+                      模块12
+                      <hr class="image"><hr>
+                      <hr>
+                      <hr>
+                    </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">
+                      模块13
+                      <hr class="image"><hr>
+                      <hr>
+                  </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">
+                      模块14
+                      <hr>
+                      <hr>
+                      <hr>
+                      <hr>
+                      <hr>
+                      <hr>
+                      <hr>
+                      <hr>
+                      <hr>
+                  </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">
+                      模块15
+                      <hr class="image">
+                      <hr>
+                      <hr>
+                      <hr>
+                      <hr>
+                    </div>
+                </article>
+                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-6">
+                   <div class="card">
+                      模块16
+                      <hr>
+                      <hr>
+                      <hr>
+                      <hr>
+                      <hr>
+                      <hr>
+                    </div>
+                </article>
+               
+            </div>
+          </div>
+
+         <!--页脚-->
+        <footer class="footer">ICodeRoad-&copy;路条编程版权所有</footer>
+    </div>
+</body>
+</html>
