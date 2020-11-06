@@ -4,11 +4,33 @@
   <head>
     <meta charset="utf-8">
     <!--注释   页头标题   -->
-    <title> CSS Grid 网格布局：「22」使用网格项目属性 grid-area 设置网格项目布局</title>
+    <title> CSS Grid 网格布局：「23」使用网格项目属性 justify-self 设置网格项目布局</title>
     <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
     <style type="text/css">
       .container {
           display:grid;
+      }
+
+      .justify-self-item-main {
+           grid-template-columns: 1fr 1fr 1fr;
+           grid-template-rows: 1fr 1fr 1fr;
+      }
+
+       .justify-self-sub-item-main {
+           grid-template-columns: 1fr ;
+           grid-template-rows: 1fr ;
+      }
+
+      .justify-self-item-a {
+        justify-self: center;
+      }
+
+      .justify-self-item-b {
+        justify-self: stretch;
+      }
+
+      .border-radius {
+         border-radius: 5px;
       }
 
       .grid-area-item-main {
@@ -569,7 +591,7 @@
                     </div>
                   </div>
               </article>
-                <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-8">
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-8">
                    <div class="card">
                        <div class="container grid-area-item-main ">
                          <div class="item2 area-item-a  grid-auto-border border-radius-top-right  border-radius-bottom-right item-text">area-item-a</div>
@@ -584,7 +606,36 @@
                          <div class="box-no-margin grid-auto-border"></div>        
                       </div>                      
                     </div>
-                </article>              
+              </article> 
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-8">
+                   <div class="card">
+                      <div class="container justify-self-item-main ">
+                         <div class="box-no-margin grid-auto-border border-radius-top-left">
+                             <div class=" container justify-self-sub-item-main ">
+                                  <div class="item3 justify-self-item-a item-text border-radius">item-a</div>
+                             </div>
+                         </div>
+                         <div class="box-no-margin grid-auto-border "></div>
+                         <div class="box-no-margin grid-auto-border border-radius-top-right"></div>
+                         <div class="box-no-margin grid-auto-border "></div>
+                         <div class="box-no-margin grid-auto-border "></div>
+                         <div class="box-no-margin grid-auto-border "></div>
+                         <div class="box-no-margin grid-auto-border border-radius-bottom-left"></div>                 
+                         <div class="box-no-margin grid-auto-border "></div>
+                         <div class="box-no-margin grid-auto-border border-radius-bottom-right"></div>
+                      </div>         
+                    </div>
+                </article>  
+               <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-8">
+                 <div class="card">
+                    模块22
+                  </div>
+              </article>
+              <article class="article  ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12 ant-col-lg-12 ant-col-xl-8">
+                   <div class="card">
+                       模块23          
+                    </div>
+              </article>               
             </div>
           </div>
 
